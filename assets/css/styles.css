@@ -11,16 +11,17 @@
    Dùng custom properties để thay đổi tập trung, nhất quán toàn trang.
    ========================================================================== */
 :root {
-  /* --- Bảng màu --- */
-  --color-primary: #b113ef;      /* xanh thương hiệu */
-  --color-primary-dark: #e20ce9;
-  --color-accent: #f50ff5;       /* tím nhấn */
-  --color-text: #f50505;         /* chữ chính */
-  --color-text-soft: #64748b;    /* chữ phụ */
-  --color-bg: #ffffff;           /* nền trang */
-  --color-surface: #f8fafc;      /* nền vùng nhấn */
-  --color-border: #e2e8f0;       /* viền */
-  --color-chip: #eff6ff;         /* nền chip kỹ năng */
+  /* --- Bảng màu: Kem & Xanh Ô-liu --- */
+  --color-primary: #4a6b53;      /* Xanh rêu/ô-liu trầm */
+  --color-primary-dark: #354f3c; /* Xanh rêu đậm khi hover */
+  --color-accent: #3d5a45;       /* Xanh kem nhạt */
+  --color-text: #242925;         /* Than chì ấm */
+  --color-text-soft: #5c665e;    /* Xám xanh cho chữ phụ */
+  --color-bg: #fcfaf5;           /* Nền kem trắng ngà */
+  --color-surface: #f4f0e6;      /* Nền vùng nhấn */
+  --color-border: #dfd9cc;       /* Viền kem xám */
+  --color-chip: #e6ece7;         /* Nền chip kỹ năng */
+
 
   /* --- Typography --- */
   --font-base: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -375,7 +376,65 @@ ul {
 .contact-list a:hover { text-decoration: underline; }
 
 /* ==========================================================================
-   9. FOOTER
+   9. GÓP Ý
+   ========================================================================== */
+.feedback-card {
+  max-width: 640px;
+  margin-inline: auto;
+  padding: var(--space-3);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.feedback-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.feedback-form label {
+  font-weight: 600;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  resize: vertical;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.feedback-form textarea:hover,
+.feedback-form textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.feedback-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 107, 83, 0.15);
+}
+
+.feedback-form .btn {
+  align-self: flex-start;
+  border: 0;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   10. FOOTER
    ========================================================================== */
 .site-footer {
   border-top: 1px solid var(--color-border);
@@ -396,7 +455,7 @@ ul {
 .to-top { color: var(--color-primary); font-weight: 600; }
 
 /* ==========================================================================
-   10. MEDIA QUERIES – nâng cấp theo breakpoint (mobile-first)
+   11. MEDIA QUERIES – nâng cấp theo breakpoint (mobile-first)
    ========================================================================== */
 
 /* ----- TABLET: ≥ 768px ----- */
@@ -438,7 +497,7 @@ ul {
 }
 
 /* ==========================================================================
-   11. HỖ TRỢ TIẾP CẬN & ƯA THÍCH NGƯỜI DÙNG
+   12. HỖ TRỢ TIẾP CẬN & ƯA THÍCH NGƯỜI DÙNG
    ========================================================================== */
 :focus-visible {
   outline: 3px solid var(--color-accent);
